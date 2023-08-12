@@ -7,10 +7,17 @@ namespace Assets.scripts.Shooting
     {
         public int hpMax;
         public int hp;
-        public HpBar hpBar;
+        public HpBarBehaviour hpBar;
 
         // Use this for initialization
         void Start()
+        {
+            hp = hpMax;
+            hpBar.Set(1, true);
+            hpBar.Show();
+        }
+
+        public void FullFillHp()
         {
             hp = hpMax;
             hpBar.Set(1, true);

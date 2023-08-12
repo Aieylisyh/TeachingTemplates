@@ -12,6 +12,7 @@ namespace Assets.scripts.Shooting
         float _radian;
         Vector3 _startPos;
         public float offset;
+
         private void Start()
         {
             _startPos = transform.position;
@@ -20,10 +21,11 @@ namespace Assets.scripts.Shooting
 
         void Update()
         {
-            radius += Time.deltaTime * radiusSpeed;
-            _radian += Time.deltaTime * randianSpeed;
+            var dt = Time.deltaTime;
+            radius += dt * radiusSpeed;
+            _radian += dt * randianSpeed;
 
-            _startPos += upSpeed * Vector3.up * Time.deltaTime;
+            _startPos += upSpeed * Vector3.up * dt;
 
             transform.position = _startPos
                 + radius * Mathf.Sin(_radian + offset) * Vector3.forward

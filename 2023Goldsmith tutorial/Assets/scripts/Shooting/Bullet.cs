@@ -29,7 +29,7 @@ namespace Assets.scripts.Shooting
 
         public void SetTarget(Transform t)
         {
-            var distance = t.localPosition - transform.position;
+            var distance = t.position - transform.position;
             _dir = distance.normalized;
             _timeToHit = distance.magnitude / speed;
             _timeFromStart = 0;
